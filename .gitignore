@@ -1,0 +1,6 @@
+messenger-nativefier-*.pkg.tar.zst
+messenger-nativefier-*.pkg.tar.xz
+messenger-nativefier-*.log
+PKGBUILD-namcap.log
+pkg/
+src/

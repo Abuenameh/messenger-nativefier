@@ -9,8 +9,14 @@ url="https://messenger.com/"
 license=('custom')
 depends=('gtk3' 'libxss' 'nss')
 makedepends=('imagemagick' 'nodejs-nativefier' 'unzip')
-source=("${pkgname}.desktop")
-md5sums=('fdbed13b4e0a24f7a92834b6211d56e0')
+source=(
+  "${pkgname}.desktop"
+  "${pkgname}-inject.js"
+)
+md5sums=(
+  'fdbed13b4e0a24f7a92834b6211d56e0'
+  'fe0de45b39f12f1f51366c340eaef387'
+)
 
 build() {
     cd $srcdir
@@ -18,6 +24,7 @@ build() {
     nativefier \
         -p linux \
         --name "Facebook Messenger" \
+        --inject "${pkgname}-inject.js" \
         --verbose \
         --single-instance \
 		--internal-urls www.messenger.com \
